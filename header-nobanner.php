@@ -16,7 +16,6 @@
 <body <?php body_class() ?>>
   <header class="top-bar">
     <div class="top-bar__wrap">
-      
     <?php 
       if(has_custom_logo()):
         echo '<div class="top-bar__logoImg">';
