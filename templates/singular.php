@@ -1,4 +1,11 @@
 <div class="singlePage">
+  <?php if(get_post_meta(get_the_ID(),'id_video', true)): ?>
+  <iframe width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/<?php echo get_post_meta(get_the_ID(),'id_video', true); ?>" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<?php endif; ?>
   <h2 class="posts__title singlePage__title"><?php the_title(); ?></h2>
   <article class="postCard">
     <div class="postCard__info">
@@ -11,7 +18,7 @@
           // has_category()
           // pagina single
       ?>
-      
+
       <?php if(get_post_meta( get_the_ID(), 'post_level', true) && has_category('tutorial')): ?>
         <p class="postCard__level">
           Nivel do post: 
