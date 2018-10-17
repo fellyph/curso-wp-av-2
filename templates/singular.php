@@ -1,11 +1,14 @@
 <div class="singlePage">
-  <?php if(get_post_meta(get_the_ID(),'id_video', true)): ?>
+  <?php 
+    if(function_exists('get_field')):
+      if(get_field('id_video')): ?>
   <iframe width="560" 
           height="315" 
-          src="https://www.youtube.com/embed/<?php echo get_post_meta(get_the_ID(),'id_video', true); ?>" 
+          src="https://www.youtube.com/embed/<?php the_field('id_video'); ?>" 
           frameborder="0" 
           allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<?php endif; ?>
+<?php endif;
+  endif; ?>
   <h2 class="posts__title singlePage__title"><?php the_title(); ?></h2>
   <article class="postCard">
     <div class="postCard__info">
@@ -19,14 +22,19 @@
           // pagina single
       ?>
 
-      <?php if(get_post_meta( get_the_ID(), 'post_level', true) && has_category('tutorial')): ?>
-        <p class="postCard__level">
-          Nivel do post: 
-          <span class="postCard__level_item">
-            <?php echo get_post_meta( get_the_ID(), 'post_level', true); ?>
-          </span>
-        </p>
-      <?php endif; ?>
+      <?php 
+        if(function_exists('get_field')):
+          if(get_field('post_level') && has_category('tutorial')): ?>
+          <p class="postCard__level">
+            Nivel do post: 
+            <span class="postCard__level_item">
+              <?php the_field('post_level'); ?>
+            </span>
+          </p>
+      <?php 
+          endif;
+        endif; 
+      ?>
 
     </div>
     <footer class="postCard__footer">
