@@ -40,5 +40,9 @@
       <a href="<?php bloginfo('url'); ?>">Voltar para a home</a>
     </footer>
   </article>
-  <?php get_template_part('templates/card', 'relacionados'); ?>
+  <?php 
+  if(get_field('exibir_card')) {
+    get_template_part('templates/card', 'relacionados');
+  }
+  ?>
 </div>

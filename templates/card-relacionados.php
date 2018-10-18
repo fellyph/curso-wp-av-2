@@ -12,7 +12,7 @@
       <?php endif; ?>
   
       <?php 
-        $paginasRelacionadas = get_field('pagina_relacionada');
+        $paginasRelacionadas = get_field('paginas_relacionadas');
         if($paginasRelacionadas) {
           echo '<h3>Páginas Relacionadas</h3>';
           foreach($paginasRelacionadas as $pagina) {
