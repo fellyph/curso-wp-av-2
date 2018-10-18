@@ -623,8 +623,10 @@ body.category-marketing .archive__title {
 }
 
 /*
-  card autor
-*/
+ *
+ * card auto
+ *
+ */
 
 .autorCard__cracha {
   display: flex;
@@ -643,6 +645,10 @@ body.category-marketing .archive__title {
 
 .autorCard__descricao {
   margin: 0;
+}
+
+.postRelacionados {
+  max-width: 100%;
 }
 
 @media (max-width: 700px) {
