@@ -40,16 +40,4 @@
       <a href="<?php bloginfo('url'); ?>">Voltar para a home</a>
     </footer>
   </article>
-
-  <article class="relacionadosCard">
-      <h3 class="relacionadosCard__title">Post Relacionado</h3>
-      <?php
-        $linkRelacionado = get_field('post_relacionado');
-      ?>
-      <a class="relacionadosCard__link" 
-         href="<?php echo $linkRelacionado['url']; ?>"
-         target="<?php echo $linkRelacionado['target']; ?>">
-        <?php echo $linkRelacionado['title']; ?>
-      </a>
-  </article>
 </div>
