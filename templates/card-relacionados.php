@@ -10,15 +10,14 @@
         <?php echo $linkRelacionado['title']; ?>
       </a>
       <?php endif; ?>
-      
-
-      <h3>Páginas Relacionadas</h3>
   
       <?php 
         $paginasRelacionadas = get_field('pagina_relacionada');
-        
-        foreach($paginasRelacionadas as $pagina) {
-          echo $pagina . '<br>';
+        if($paginasRelacionadas) {
+          echo '<h3>Páginas Relacionadas</h3>';
+          foreach($paginasRelacionadas as $pagina) {
+            echo $pagina . '<br>';
+          }
         }
       ?>
   </article>
