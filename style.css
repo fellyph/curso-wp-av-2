@@ -622,6 +622,29 @@ body.category-marketing .archive__title {
   box-sizing: border-box;
 }
 
+/*
+  card autor
+*/
+
+.autorCard__cracha {
+  display: flex;
+  box-shadow: 1px 1px 1px #808080;
+}
+
+.autorCard__info {
+  margin-left: 0.5em;
+  padding: 0.5em;
+}
+
+.autorCard__nome {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+
+.autorCard__descricao {
+  margin: 0;
+}
+
 @media (max-width: 700px) {
   .top-bar__wrap {
     display: block;
