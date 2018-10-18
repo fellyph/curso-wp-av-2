@@ -40,7 +40,5 @@
       <a href="<?php bloginfo('url'); ?>">Voltar para a home</a>
     </footer>
   </article>
-  <?php
-      get_template_part('templates/card', 'miniRelacionados');
-  ?>
+  <?php get_template_part('templates/card', 'miniRelacionados'); ?>
 </div>
