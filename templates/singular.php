@@ -41,8 +41,8 @@
     </footer>
   </article>
   <?php 
-  if(get_field('exibir_card')) {
-    get_template_part('templates/card', 'relacionados');
-  }
+    if(get_field('exibir_card')) {
+      get_template_part('templates/card', 'relacionados');
+    }
   ?>
 </div>
