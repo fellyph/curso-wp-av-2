@@ -10,6 +10,34 @@
   </article>
 
   <aside class="addressCard">
-    <?php the_field('endereco'); ?>
+    <h3>Onde nos encontrar</h3>
+
+    <dl class="addressCard__info">
+      <dt class="addressCard__label">Endereço</dt>
+      <dd class="addressCard__detail">
+        <?php the_field('endereco'); ?>
+      </dd>
+      <dt class="addressCard__label">Cidade</dt>
+      <dd class="addressCard__detail">
+        <?php the_field('cidade'); ?>
+      </dd>
+      <dt class="addressCard__label">Estado</dt>
+      <dd class="addressCard__detail">
+        <?php the_field('estado'); ?>
+      </dd class="addressCard__label">
+      <dt class="addressCard__label">Telefone</dt>
+      <dd class="addressCard__detail">
+        <a href="tel:<?php the_field('telefone'); ?>">
+          <?php the_field('telefone'); ?>
+        </a>
+      </dd>
+      <dt class="addressCard__label">E-mail</dt>
+      <dd class="addressCard__detail">
+        <a href="mailto:<?php the_field('email'); ?>">
+          <?php the_field('email'); ?>
+        </a>
+      </dd>
+    </dl>
+
   </aside>
 </div>
