@@ -5,18 +5,26 @@
       <?php the_content(); ?>
     </div>
 
-    <div class="postCard__info">
+    <?php
+      $post = get_field('extras');
+      if($post):
+    ?>
+    <details class="postExtra">
       <?php 
-        $post = get_field('extras');
+        
         // setup_postdata
         // define que o dado que a gente vai trabalhar 
         // é um post
-        setup_postdata($post);
-        echo '<h3>' . get_the_title() . '</h3>';
-        echo '<div>' . get_the_content() .  '</div>';
-        wp_reset_postdata();
+        setup_postdata($post); ?>
+
+        <summary class="postExtra__title"> <?php the_title() ?> </summary>
+        <div class="postExtra__content">
+          <?php the_content(); ?>
+        </div>
+        <?php wp_reset_postdata()
       ?>
-    </div>
+    </details>
+    <?php endif; ?>
     <footer class="postCard__footer">
       <a href="<?php bloginfo('url'); ?>">Voltar para a home</a>
     </footer>
