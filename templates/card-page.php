@@ -7,11 +7,14 @@
 
     <div class="postCard__info">
       <?php 
-        $extras = get_field('extras');
-        //print_r($extras);
-
-        echo '<h3>' . $extras->post_title . '</h3>';
-        echo '<div>' . $extras->post_content .  '</div>';
+        $post = get_field('extras');
+        // setup_postdata
+        // define que o dado que a gente vai trabalhar 
+        // é um post
+        setup_postdata($post);
+        echo '<h3>' . get_the_title() . '</h3>';
+        echo '<div>' . get_the_content() .  '</div>';
+        wp_reset_postdata();
       ?>
     </div>
     <footer class="postCard__footer">
