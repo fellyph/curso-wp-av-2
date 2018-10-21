@@ -17,20 +17,24 @@
       <dd class="addressCard__detail">
         <?php the_field('endereco'); ?>
       </dd>
+
       <dt class="addressCard__label">Cidade</dt>
       <dd class="addressCard__detail">
         <?php the_field('cidade'); ?>
       </dd>
+
       <dt class="addressCard__label">Estado</dt>
       <dd class="addressCard__detail">
         <?php the_field('estado'); ?>
       </dd class="addressCard__label">
+
       <dt class="addressCard__label">Telefone</dt>
       <dd class="addressCard__detail">
         <a href="tel:<?php the_field('telefone'); ?>">
           <?php the_field('telefone'); ?>
         </a>
       </dd>
+
       <dt class="addressCard__label">E-mail</dt>
       <dd class="addressCard__detail">
         <a href="mailto:<?php the_field('email'); ?>">
@@ -39,5 +43,32 @@
       </dd>
     </dl>
 
+    <?php 
+      $mapaACF = get_field('mapa');
+    ?>
+
+    <div id="mapaContainer"></div>
   </aside>
 </div>
+
+<script>
+  var mapa;
+  var marcador;
+
+  var localPin = {
+            lat: <?php echo $mapaACF['lat'] ?>, 
+            lng: <?php echo $mapaACF['lng'] ?>
+      };
+
+  function initMap() {
+    mapa = new google.maps.Map(document.getElementById('mapaContainer'), {
+      center: localPin, 
+      zoom: 16 
+    });
+
+    marcador = new google.maps.Marker({
+      position: localPin,
+      map: mapa
+    })
+  }
+</script>

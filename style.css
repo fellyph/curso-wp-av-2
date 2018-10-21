@@ -667,6 +667,11 @@ body.category-marketing .archive__title {
   padding: 1em;
 }
 
+#mapaContainer {
+  height: 300px;
+  width: 100%;
+}
+
 @media (max-width: 700px) {
   .top-bar__wrap {
     display: block;
